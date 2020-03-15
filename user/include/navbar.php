@@ -30,28 +30,28 @@
             <img src="assets/images/logo.jpg" alt="Image" class="img-fluid">
         </a>
         </div>
-        <div class="mr-auto">
+        <div class="ml-auto">
         <nav class="site-navigation position-relative text-right" role="navigation">
             <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
             <li class="active">
-                <a href="index.html" class="nav-link text-left">Home</a>
+                <a href="index.php" class="nav-link text-left">Home</a>
             </li>
             <li class="has-children">
-                <a href="about.html" class="nav-link text-left">Profil</a>
+                <a href="about.php" class="nav-link text-left">Profil</a>
                 <ul class="dropdown">
-                <li><a href="sejarah.html">Sejarah</a></li>
-                <li><a href="vm.html">Visi/Misi</a></li>
-                <li><a href="struktur.html">Struktur Organisasi</a></li>
+                <li><a href="sejarah.php">Sejarah</a></li>
+                <li><a href="vm.php">Visi/Misi</a></li>
+                <li><a href="struktur.php">Struktur Organisasi</a></li>
                 </ul>
             </li>
             <li>
-                <a href="kurikulum.html" class="nav-link text-left">Kurikulum</a>
+                <a href="kurikulum.php" class="nav-link text-left">Kurikulum</a>
             </li>
             <li>
-                <a href="kegiatan.html" class="nav-link text-left">Kegiatan</a>
+                <a href="kegiatan.php" class="nav-link text-left">Kegiatan</a>
             </li>
             <li>
-                <a href="kontak.html" class="nav-link text-left">Kontak</a>
+                <a href="kontak.php" class="nav-link text-left">Kontak</a>
             </li>
             </ul>
             </ul>

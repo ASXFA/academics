@@ -1,21 +1,16 @@
   <div class="footer">
-        <div class="container">
-        <div class="row">
-
-        </div>
-        </div>
-
-        <div class="row">
+    <div class="container">
+      <div class="row">
         <div class="col-12">
             <div class="copyright">
-            <p>
+              <p>
                 Prodi Informatika UNLA &copy;<script>
                 document.write(new Date().getFullYear());
                 </script>
-            </p>
+              </p>
             </div>
         </div>
-        </div>
+      </div>
     </div>
   </div>
   <!-- footer -->
@@ -45,6 +40,12 @@
   <script src="assets/js/jquery.sticky.js"></script>
   <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    $('.carousel').carousel({
+      interval: 5000
+    })
+  </script>
 
 </body>
 

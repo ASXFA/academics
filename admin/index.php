@@ -1,4 +1,18 @@
 <?php 
+    session_start();
+    if(!isset($_SESSION['akses'])){
+        ?>
+        <script>
+            alert("Login Terlebihdahulu !");
+            window.location.href="login.php";
+        </script>
+<?php
+    }
+    include "koneksi.php";
+
+    $konten = mysqli_query($conn, "SELECT * FROM konten");
+    $kritikSaran = mysqli_query($conn, "SELECT * FROM kritik_Saran");
+
     include "includes/header.php";
     include "includes/navbar.php";
 ?>
@@ -12,75 +26,96 @@
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
                 <div class="row">
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-primary text-white mb-4">
-                            <div class="card-body">Primary Card</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">View Details</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <div class="col-xl-6 col-md-6">
+                        <div class="card text-center bg-primary text-white mb-4">
+                            <div class="card-body">
+                                <h4 class="mr-5"><i class="fa fa-book-open"></i> 
+                                    <span class="ml-3">Terdapat       
+                                    <?php echo mysqli_num_rows($konten); ?> Konten
+                                    </span>
+                                </h4>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-warning text-white mb-4">
-                            <div class="card-body">Warning Card</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">View Details</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-success text-white mb-4">
-                            <div class="card-body">Success Card</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">View Details</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-danger text-white mb-4">
-                            <div class="card-body">Danger Card</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">View Details</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <div class="col-xl-6 col-md-6">
+                        <div class="card text-center bg-warning text-white mb-4">
+                            <div class="card-body">
+                                <h4 class="mr-5"><i class="fa fa-comment"></i> 
+                                    <span class="ml-3">Terdapat      
+                                    <?php echo mysqli_num_rows($kritikSaran); ?> Kritik & Saran
+                                    </span>
+                                </h4>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card mb-4">
-                    <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
+                <div class="card">
+                    <div class="card-header"><i class="fas fa-comment mr-1"></i>5 Data Kritik Dan Saran</div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                            <table class="table" width="100%">
+                                <thead class="thead-dark">
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>Judul</th>
+                                        <th>Tanggal</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php 
+                                        $no = 1;
+                                        $kritikSaranindex = mysqli_query($conn, "SELECT * FROM kritik_Saran ORDER BY tanggal DESC LIMIT 5");
+                                        while($row=mysqli_fetch_assoc($kritikSaranindex)){
+                                    ?>
                                     <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
+                                        <td><?php echo $no; ?></td>
+                                        <td><?php echo $row['nama'] ?></td>
+                                        <td><?php echo $row['email'] ?></td>
+                                        <td><?php echo $row['judul'] ?></td>
+                                        <td><?php echo $row['tanggal'] ?></td>
                                     </tr>
+                                    <?php $no++;} ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><i class="fas fa-comment mr-1"></i>5 Data Kritik Dan Saran</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table" width="100%">
+                                <thead class="thead-dark">
                                     <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>2011/07/25</td>
-                                        <td>$170,750</td>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>Judul</th>
+                                        <th>Tanggal</th>
                                     </tr>
+                                </thead>
+                                <tbody>
+                                    <?php 
+                                        $no = 1;
+                                        $kontenindex = mysqli_query($conn, "SELECT * FROM konten ORDER BY tanggal_buat DESC LIMIT 5");
+                                        while($row=mysqli_fetch_assoc($kontenindex)){
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $no; ?></td>
+                                        <?php 
+                                            $konten = mysqli_query($conn,"SELECT * FROM type_konten ");
+                                            while($rows = mysqli_fetch_assoc($konten)){
+                                                if($rows['id'] == $row['type_id']){
+                                        ?>
+                                        <td width="15%"><?php echo $rows['nama_type'] ?></td>
+                                        <?php }} ?>
+                                        <td><?php echo $row['judul'] ?></td>
+                                        <td><?php echo substr($row['deskripsi'],0,50) ?></td>
+                                        <td><?php echo $row['tanggal_buat'] ?></td>
+                                    </tr>
+                                    <?php $no++;} ?>
                                 </tbody>
                             </table>
                         </div>
