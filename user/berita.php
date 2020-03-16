@@ -17,16 +17,16 @@
       <div class="container">
         <a href="index.php">Home</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
-        <span class="current">Kegiatan</span>
+        <span class="current">Berita</span>
       </div>
     </div>
 
     <div class="container">
-      <h4 class="text-center mt-3">Kegiatan Informatika UNLA</h4>
+      <h4 class="text-center mt-3">Berita Informatika UNLA</h4>
       <div class="row">
         <?php 
           include '../admin/koneksi.php';
-          $data = mysqli_query($conn, "SELECT * FROM konten WHERE type_id=3");
+          $data = mysqli_query($conn, "SELECT * FROM konten WHERE type_id=1");
           while($row = mysqli_fetch_assoc($data)){
         ?>
         <div class="col-4 mt-3">

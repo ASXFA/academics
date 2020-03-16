@@ -49,35 +49,28 @@
             <div class="card-body">
               <h5 class="card-title"><?php echo $row['judul'] ?></h5>
               <p class="card-text"><?php echo substr($row['deskripsi'],0,100) ?></p>
-              <a href="detailBerita.php?id=<?php echo $row['id'] ?>" class="float-right">Infromasi Lebih <i class="fa fa-arrow-right"></i></a>
+              <a href="detailKonten.php?id=<?php echo $row['id'] ?>" class="float-right">Infromasi Lebih <i class="fa fa-arrow-right"></i></a>
               <br>
               <p class="card-text"><small class="text-muted">
                 <?php 
                   if ($row['tanggal_edit']!=NULL) {
-                    $awal = strtotime($row['tanggal_edit']);
+                    $awal = date_create($row['tanggal_edit']);;
                   }else{
-                    $awal = strtotime($row['tanggal_buat']);
+                    $awal = date_create($row['tanggal_buat']);
                   }
-                  $akhir = strtotime(date('Y-m-d H:m:s'));
-                  $diff = $akhir - $awal;
-                  $tahun = floor($diff / (60 * 60 * 24 * 365));
-                  $hari = floor($diff / (60 * 60 * 24));
-                  $jam = floor($diff/(60*60));
-                  $menit = $diff-$jam*(60*60);
-                  $menit = floor($menit/60);
+                  $akhir = date_create();
+                  $diff = date_diff($awal,$akhir);
 
-                  if ($menit > 60) {
-                    $jam = $jam + 1;
-                  }
-
-                  if ($tahun > 0 ) {
-                    echo "Terakhir Update Pada ".$tahun." tahun ".$hari." hari ".$jam." Jam ".$menit." Menit"; 
-                  }else if($tahun == 0){
-                    echo "Terakhir Update Pada ".$hari." hari ".$jam." Jam ".$menit." Menit"; 
-                  }else if(($tahun == 0 )&&($hari == 0)){
-                    echo "Terakhir Update Pada ".$jam." Jam ".$menit." Menit"; 
-                  }else if(($tahun == 0 )&&($hari == 0) && ($jam == 0)){
-                    echo "Terakhir Update Pada ".$menit." Menit"; 
+                  if ($diff->y > 0 ) {
+                    echo "Terakhir Update Pada ".$diff->y." tahun ".$diff->m." Bulan".$diff->d." hari ".$jam." Jam ".$menit." Menit"; 
+                  }else if(($diff->y == 0 )&&($diff->m > 0)){
+                    echo "Terakhir Update Pada ".$diff->m." Bulan ".$diff->d." Hari ".$diff->h." Jam ".$diff->i." Menit"; 
+                  }else if(($diff->y == 0 )&&($diff->m == 0)&&($diff->d > 0)){
+                    echo "Terakhir Update Pada ".$diff->d." Hari ".$diff->h." Jam ".$diff->i." Menit"; 
+                  }else if(($diff->y == 0 )&&($diff->m == 0)&&($diff->d == 0)&&($diff->h > 0)){
+                    echo "Terakhir Update Pada ".$diff->h." Jam ".$diff->i." Menit"; 
+                  }else if(($diff->y == 0 )&&($diff->m == 0)&&($diff->d == 0)&&($diff->h == 0)){
+                    echo "Terakhir Update Pada ".$diff->i." Menit"; 
                   }
                 ?>
               </small></p>
@@ -107,7 +100,7 @@
             <div class="card-body">
               <h5 class="card-title"><?php echo $row['judul']; ?></h5>
               <p class="card-text"><?php echo subsstr($row['deskripsi'],0,50); ?></p>
-              <p class="card-text"><a href="detailLoker.php?id=<?php echo $row['id'] ?>" class="float-right">Lihat <i class="fa fa-arrow-right"></i></a></p>
+              <p class="card-text"><a href="detailKonten.php?id=<?php echo $row['id'] ?>" class="float-right">Lihat <i class="fa fa-arrow-right"></i></a></p>
             </div>
           </div>
           <?php }} ?>

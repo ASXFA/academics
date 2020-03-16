@@ -5,7 +5,7 @@
         <div class="container">
           <div class="row align-items-end">
             <div class="col-lg-7">
-              <h2 class="mb-0">KEGIATAN INFORMATIKA</h2>
+              <h2 class="mb-0">Lowongan Kerja INFORMATIKA</h2>
               <p>UNLA</p>
             </div>
           </div>
@@ -17,16 +17,28 @@
       <div class="container">
         <a href="index.php">Home</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
-        <span class="current">Kegiatan</span>
+        <span class="current">Lowongan Kerja</span>
       </div>
     </div>
 
     <div class="container">
-      <h4 class="text-center mt-3">Kegiatan Informatika UNLA</h4>
+      <h4 class="text-center mt-3">Lowongan Kerja Informatika UNLA</h4>
       <div class="row">
         <?php 
           include '../admin/koneksi.php';
-          $data = mysqli_query($conn, "SELECT * FROM konten WHERE type_id=3");
+          $data = mysqli_query($conn, "SELECT * FROM konten WHERE type_id=2");
+
+          if (mysqli_num_rows($data) ==0 ) {
+        ?>
+         <div class="col mt-3">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title text-center p-5">Tidak Ada Loker yg Tersedia</h5>
+              </div>
+            </div>
+          </div>
+        <?php 
+          }else{
           while($row = mysqli_fetch_assoc($data)){
         ?>
         <div class="col-4 mt-3">
@@ -62,7 +74,7 @@
             </div>
           </div>
         </div>
-        <?php } ?>
+        <?php }} ?>
       </div>
     </div>
 

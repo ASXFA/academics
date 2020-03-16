@@ -42,7 +42,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
@@ -76,7 +76,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
@@ -110,7 +110,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
@@ -144,7 +144,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
@@ -178,7 +178,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
@@ -212,7 +212,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
@@ -246,7 +246,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
@@ -280,7 +280,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
@@ -313,7 +313,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
@@ -347,7 +347,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
@@ -381,7 +381,7 @@
                 <td></td>
               </tr>
             </thead>
-            <tr>
+            <tr class="bg-success text-white">
               <td>No.</td>
               <td>Kode MK</td>
               <td>Matematika</td>
